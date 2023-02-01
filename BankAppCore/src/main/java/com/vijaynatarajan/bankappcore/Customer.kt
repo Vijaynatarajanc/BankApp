@@ -7,5 +7,9 @@ class Customer(
     var password: String, id: Long, name: String
 ) : Entity(id, name) {
 
+    fun addAmount() {
+        
+    }
+
 
 }
