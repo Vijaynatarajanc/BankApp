@@ -10,6 +10,4 @@ class Customer(
     fun addAmount() {
         
     }
-
-
 }
