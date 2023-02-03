@@ -5,9 +5,5 @@ class Customer(
     val accountNumber: String,
     var accountType: String,
     var password: String, id: Long, name: String
-) : Entity(id, name) {
+)
 
-    fun addAmount() {
-        
-    }
-}
