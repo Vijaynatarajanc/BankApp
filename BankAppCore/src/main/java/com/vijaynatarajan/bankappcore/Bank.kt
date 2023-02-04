@@ -12,12 +12,10 @@ class Bank(
     }
 
     fun withdrawn(amount: Double): Double {
-        if (accountBalance >= amount) {
+        if (accountBalance < amount)
+            throw InsufficientBalance("Insufficient balance, Please check account balance!!")
 
-            accountBalance -= amount
-        } else {
-            throw CustomException("In Sufficient Fund")
-        }
+        accountBalance -= amount
         return amount
     }
 
@@ -26,7 +24,7 @@ class Bank(
 
 }
 
-class CustomException(message: String) : Exception(message)
+class InsufficientBalance(message: String) : Exception(message)
 
 
 fun main(args: Array<String>) {
@@ -34,7 +32,7 @@ fun main(args: Array<String>) {
     println(bank.deposit(1000.0))
     try {
         println(bank.withdrawn(3000.0))
-    } catch (e: CustomException) {
+    } catch (e: InsufficientBalance) {
         println(e)
     }
 
