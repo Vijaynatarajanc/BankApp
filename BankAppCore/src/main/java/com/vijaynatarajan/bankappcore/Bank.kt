@@ -38,7 +38,7 @@ fun main(args: Array<String>) {
         println(e)
     }
 
-//     println(bank.getBalance())
+    println(bank.getBalance())
 }
 
 
