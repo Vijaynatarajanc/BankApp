@@ -29,9 +29,9 @@ class InsufficientBalance(message: String) : Exception(message)
 
 fun main(args: Array<String>) {
     var bank = Bank("SBI")
-    println(bank.deposit(1000.0))
+    println(bank.deposit(500.0))
     try {
-        println(bank.withdrawn(3000.0))
+        println(bank.withdrawn(500.0))
     } catch (e: InsufficientBalance) {
         println(e)
     }
