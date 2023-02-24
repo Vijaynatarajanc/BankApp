@@ -1,10 +1,13 @@
 package com.vijaynatarajan.bankappcore
 
 class Customer(
-    var password: String, id: Long, name: String,
+    var password: Int,
+    var name: String,
     var address: String,
-    val accountNumber: String,
+    val accountNumber: Int,
     var accountType: String,
+
+
 
     )
 
