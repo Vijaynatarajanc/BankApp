@@ -1,16 +1,15 @@
 package com.vijaynatarajan.bankappcore
 
 class Bank(
-    val name: String,
-    var accountBalance: Double = 0.0
+    val name: String, var accountBalance: Double = 0.0
 
 ) {
     var nextAccountId: Int = 1
     private var accounts = mutableListOf<BankAccount>()
 
-    fun createAccount(accountBalance: Double): BankAccount {
+    fun createAccount(accountBalance: Double, customer: Customer): BankAccount {
         this.accountBalance = accountBalance
-        val account = BankAccount(nextAccountId++, accountBalance)
+        val account = BankAccount(nextAccountId++, accountBalance, customer)
         accounts.add(account)
         return account
 
@@ -23,8 +22,7 @@ class Bank(
     }
 
     fun withdrawn(amount: Double, bankAccount: BankAccount): Double {
-        if (bankAccount.balance < amount)
-            throw InsufficientBalance("Insufficient balance, Please check account balance!!")
+        if (bankAccount.balance < amount) throw InsufficientBalance("Insufficient balance, Please check account balance!!")
 
         bankAccount.balance -= amount
         return amount
@@ -59,14 +57,24 @@ class InsufficientBalance(message: String) : Exception(message)
 fun main(args: Array<String>) {
     val bank = Bank("SBI")
 
-    val vijay = bank.createAccount(5000.0)
-    val jack = bank.createAccount(10000.0)
-    val saravanan = bank.createAccount(120000.0)
-    val anbu = bank.createAccount(500000.0)
+    val vijay = Customer(1234, "vijay", "12v,veeraganur", 1234, "savings account")
+    val jack = Customer(5678, "jack", "24g", 123456789, "salary Account")
 
-    println("Created account with id ${vijay.accountId} and balance ${vijay.balance}")
+//    val vijayAccount = bank.createAccount(5000.0, vijay)
+    val jackAccount = bank.createAccount(10000.0, jack)
+//    val saravanan = bank.createAccount(120000.0,customer)
+//    val anbu = bank.createAccount(500000.0,customer)
+
+    println("Created account with id ${jackAccount.accountId} and balance ${jackAccount.balance}")
     bank.getAccountList().forEach {
-        println(it)
+        println("Name :${it.customer.name}")
+        println("Account number:${it.customer.accountNumber}")
+        println("password :${it.customer.password}")
+        println("Address:${it.customer.address}")
+        println("Account type:${it.customer.accountType}")
+        println("Balance:${it.balance}")
+        println("AccountId:${it.accountId}")
+
     }
     println(bank.getAccountSize())
     bank.deleteAllAccount()
@@ -76,14 +84,14 @@ fun main(args: Array<String>) {
         println(it)
     }
 
-    println(bank.deposit(500.0, vijay))
+    println(bank.deposit(500.0, jackAccount))
     try {
-        println(bank.withdrawn(500.0, vijay))
+        println(bank.withdrawn(500.0, jackAccount))
     } catch (e: InsufficientBalance) {
         println(e)
     }
 
-    println(bank.getBalance(vijay))
+    println(bank.getBalance(jackAccount))
 }
 
 
