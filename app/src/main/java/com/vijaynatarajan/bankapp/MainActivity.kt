@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
 
         val bank = Bank("Bank Of Saravanan")
 
-        bank.name
+
     }
 }
