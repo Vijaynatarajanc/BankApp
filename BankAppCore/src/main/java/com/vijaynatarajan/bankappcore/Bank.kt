@@ -1,14 +1,11 @@
 package com.vijaynatarajan.bankappcore
 
-class Bank(
-    val name: String, var accountBalance: Double = 0.0
+class Bank(val name: String) {
 
-) {
     var nextAccountId: Int = 1
     private var accounts = mutableListOf<BankAccount>()
 
     fun createAccount(accountBalance: Double, customer: Customer): BankAccount {
-        this.accountBalance = accountBalance
         val account = BankAccount(nextAccountId++, accountBalance, customer)
         accounts.add(account)
         return account
