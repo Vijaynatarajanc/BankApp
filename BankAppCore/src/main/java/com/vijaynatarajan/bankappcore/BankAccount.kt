@@ -1,7 +1,7 @@
 package com.vijaynatarajan.bankappcore
 
 data class BankAccount(
-    var accountId: Int,
+    var customerId: Int,
     var balance: Double,
     val customer: Customer
 ) {
