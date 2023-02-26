@@ -1,6 +1,14 @@
 package com.vijaynatarajan.bankappcore
 
-class Bank(val name: String) {
+class Bank(
+    val name: String,
+    val branchName: String,
+    val address: String,
+    val ifscCode: String,
+    val micrCode: String,
+    val phoneNo: Int,
+
+    ) {
 
     var nextAccountId: Int = 1
     private var accounts = mutableListOf<BankAccount>()
@@ -52,7 +60,8 @@ class InsufficientBalance(message: String) : Exception(message)
 
 
 fun main(args: Array<String>) {
-    val bank = Bank("SBI")
+    val bank =
+        Bank("SBI", "Madurai", "12v, Rajalaxmi layout,Madurai", "SDBI000I008", "1234567",45678)
 
     val vijay = Customer(1234, "vijay", "12v,veeraganur", 1234, "savings account")
     val jack = Customer(5678, "jack", "24g", 123456789, "salary Account")
