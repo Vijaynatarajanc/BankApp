@@ -60,15 +60,14 @@ class InsufficientBalance(message: String) : Exception(message)
 
 
 fun main(args: Array<String>) {
-    val bank =
-        Bank(
-            "SBI",
-            "Madurai",
-            "12v, Rajalaxmi layout,Madurai",
-            "SDBI000I008",
-            "1234567",
-            45678
-        )
+    val bank = Bank(
+        "SBI",
+        "Madurai",
+        "12v, Rajalaxmi layout,Madurai",
+        "SDBI000I008",
+        "1234567",
+        45678
+    )
 
     val vijay = Customer(
         1234,
@@ -77,7 +76,8 @@ fun main(args: Array<String>) {
         1234,
         "savings account",
         123456789101,
-        "xyz00asf"
+        "xyz00asf",
+        8489293979
     )
     val jack = Customer(
         5678,
@@ -86,9 +86,11 @@ fun main(args: Array<String>) {
         123456789,
         "salary Account",
         123456782345,
-        "bgh005xvm"
+        "bgh005xvm",
+        7644965433,
 
-    )
+
+        )
 
 //    val vijayAccount = bank.createAccount(5000.0, vijay)
     val jackAccount = bank.createAccount(10000.0, jack)
