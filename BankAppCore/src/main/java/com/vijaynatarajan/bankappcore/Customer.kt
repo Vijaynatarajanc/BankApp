@@ -8,6 +8,7 @@ class Customer(
     var accountType: String,
     val aadhaarNo: Long,
     val panCardNo: String,
+    val phoneNo: Long
 
 
     )
