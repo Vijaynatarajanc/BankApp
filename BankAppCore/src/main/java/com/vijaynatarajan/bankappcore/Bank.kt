@@ -20,7 +20,7 @@ class Bank(
 
     }
 
-    fun deposit(amount: Double, bankAccount: BankAccount): Double {
+    fun deposit(amount: Double, bankAccount: BankAccount ): Double {
         bankAccount.balance += amount
 
         return bankAccount.balance
