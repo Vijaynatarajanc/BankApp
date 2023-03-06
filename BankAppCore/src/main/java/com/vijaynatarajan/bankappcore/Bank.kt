@@ -21,21 +21,21 @@ class Bank(
     }
 
     fun deposit(amount: Double, bankAccount: BankAccount ): Double {
-        bankAccount.balance += amount
+        bankAccount.account_balance += amount
 
-        return bankAccount.balance
+        return bankAccount.account_balance
     }
 
     fun withdrawn(amount: Double, bankAccount: BankAccount): Double {
-        if (bankAccount.balance < amount) throw InsufficientBalance("Insufficient balance, Please check account balance!!")
+        if (bankAccount.account_balance < amount) throw InsufficientBalance("Insufficient balance, Please check account balance!!")
 
-        bankAccount.balance -= amount
+        bankAccount.account_balance -= amount
         return amount
     }
 
     fun getBalance(bankAccount: BankAccount): Double {
 
-        return bankAccount.balance
+        return bankAccount.account_balance
 
     }
 
@@ -97,36 +97,36 @@ fun main(args: Array<String>) {
 //    val saravanan = bank.createAccount(120000.0,customer)
 //    val anbu = bank.createAccount(500000.0,customer)
 
-    println("Created account with id ${jackAccount.customerId} and balance ${jackAccount.balance}")
-    bank.getAccountList().forEach {
-        println("Name :${it.customer.name}")
-        println("Account number:${it.customer.accountNumber}")
-        println("password :${it.customer.password}")
-        println("Address:${it.customer.address}")
-        println("Account type:${it.customer.accountType}")
-        println("Balance:${it.balance}")
-        println("customerId:${it.customerId}")
-        println("AadhaarNo:${it.customer.aadhaarNo}")
-        println("panNo:${it.customer.panCardNo}")
+//    println("Created account with id ${jackAccount.customerId} and balance ${jackAccount.balance}")
+//    bank.getAccountList().forEach {
+//        println("Name :${it.customer.name}")
+//        println("Account number:${it.customer.accountNumber}")
+//        println("password :${it.customer.password}")
+//        println("Address:${it.customer.address}")
+//        println("Account type:${it.customer.accountType}")
+//        println("Balance:${it.balance}")
+//        println("customerId:${it.customerId}")
+//        println("AadhaarNo:${it.customer.aadhaarNo}")
+//        println("panNo:${it.customer.panCardNo}")
 
     }
-    println(bank.getAccountSize())
-    bank.deleteAllAccount()
-    println(bank.getAccountSize())
+//    println(bank.getAccountSize())
+//    bank.deleteAllAccount()
+//    println(bank.getAccountSize())
+//
+//    bank.getAccountList().forEach {
+//        println(it)
+//    }
+//
+//    println(bank.deposit(500.0, jackAccount))
+//    try {
+//        println(bank.withdrawn(500.0, jackAccount))
+//    } catch (e: InsufficientBalance) {
+//        println(e)
+//    }
 
-    bank.getAccountList().forEach {
-        println(it)
-    }
+//    println(bank.getBalance(jackAccount))
 
-    println(bank.deposit(500.0, jackAccount))
-    try {
-        println(bank.withdrawn(500.0, jackAccount))
-    } catch (e: InsufficientBalance) {
-        println(e)
-    }
-
-    println(bank.getBalance(jackAccount))
-}
 
 
 
