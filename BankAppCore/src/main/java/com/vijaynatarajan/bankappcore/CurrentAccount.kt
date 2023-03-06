@@ -9,5 +9,29 @@ class CurrentAccount(
 
     ) {
 
+    fun addCurrentAccount() {
+
+    }
+
+    fun editCurrentAccount() {
+
+    }
+
+    fun deleteCurrentAccount() {
+
+    }
+
+    fun updatedCurrentAccount() {
+
+    }
+
+    fun savedCurrentAccount() {
+
+    }
+
+    fun searchCurrentAccount() {
+
+    }
+
 
 }
