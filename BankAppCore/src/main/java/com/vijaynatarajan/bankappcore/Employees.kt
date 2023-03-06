@@ -1,4 +1,37 @@
 package com.vijaynatarajan.bankappcore
 
-class Employees {
+class Employees(
+    employee_id: Int,
+    employee_name: String,
+    employee_mobile: Int,
+    employee_email: String,
+    employee_userName: String,
+    employee_password: String,
+    employee_address: String,
+) {
+
+    fun addEmployees() {
+
+    }
+
+    fun editEmployees() {
+
+    }
+
+    fun deleteEmployees() {
+
+    }
+
+    fun updatedEmployees() {
+
+    }
+
+    fun savedEmployees() {
+
+    }
+
+    fun searchEmployees() {
+
+    }
+
 }
