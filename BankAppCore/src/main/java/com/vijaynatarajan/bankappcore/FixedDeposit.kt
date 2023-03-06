@@ -10,6 +10,29 @@ class FixedDeposit(
     deposit_description: String
 
 ) {
+    fun addFixedDeposit() {
+
+    }
+
+    fun editFixedDeposit() {
+
+    }
+
+    fun deleteFixedDeposit() {
+
+    }
+
+    fun updatedFixedDeposit() {
+
+    }
+
+    fun savedFixedDeposit() {
+
+    }
+
+    fun searchFixedDeposit() {
+        
+    }
 
 
 }
