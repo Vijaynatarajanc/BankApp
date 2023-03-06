@@ -8,5 +8,30 @@ class SavingsAccount(
     savings_account_description: String
 ) {
 
+    fun addSavingsAccount() {
+
+    }
+
+    fun editSavingsAccount() {
+
+    }
+
+    fun deleteSavingsAccount() {
+
+    }
+
+    fun updatedSavingsAccount() {
+
+    }
+
+    fun savedSavingsAccount() {
+
+    }
+
+    fun searchSavingsAccount() {
+
+    }
+
+
 
 }
