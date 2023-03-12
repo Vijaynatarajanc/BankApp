@@ -65,10 +65,6 @@ class Bank(
         accounts.clear()
     }
 
-    fun addAccount() {
-
-    }
-
     fun deleteAccount(accountNumber: Int) {
         val delete = accounts.find {
             it.account_number == accountNumber
@@ -90,9 +86,6 @@ class Bank(
         return search
     }
 
-    fun saveAccount() {
-
-    }
 
     var employeeId: Int = 1
     var employeeDetails = mutableListOf<Employees>()
@@ -126,6 +119,13 @@ class Bank(
     }
 
     fun getAccountSiz() = employeeDetails.size
+
+    fun deleteAllEmployee() {
+
+        employeeDetails.clear()
+    }
+
+
 
 }
 
