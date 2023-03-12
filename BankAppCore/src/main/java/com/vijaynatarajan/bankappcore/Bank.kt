@@ -2,11 +2,11 @@ package com.vijaynatarajan.bankappcore
 
 class Bank(
     val name: String,
-    val branchName: String,
+    val branch_Name: String,
     val address: String,
-    val IFSCCode: String,
-    val MICRCode: String,
-    val phoneNo: Int,
+    val IFSC_Code: String,
+    val MICR_Code: String,
+    val phone_No: Int,
 
     ) {
 
@@ -129,7 +129,7 @@ fun main(args: Array<String>) {
 
     bank.getAccountList().forEach {
         println("Name :${it.customer.name}")
-        println("Account number:${it.customer.accountNumber}")
+        println("Account number:${it.customer.account_Number}")
 //        println("password :${it.customer.password}")
 //        println("Address:${it.customer.address}")
 //        println("Account type:${it.customer.accountType}")
@@ -161,7 +161,7 @@ fun main(args: Array<String>) {
     println("\n\n##########\n\n")
     bank.getAccountList().forEach {
         println("Name :${it.customer.name}")
-        println("Account number:${it.customer.accountNumber}")
+        println("Account number:${it.customer.account_Number}")
 //        println("password :${it.customer.password}")
 //        println("Address:${it.customer.address}")
 //        println("Account type:${it.customer.accountType}")
