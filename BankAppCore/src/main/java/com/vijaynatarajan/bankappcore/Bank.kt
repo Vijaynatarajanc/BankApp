@@ -94,6 +94,39 @@ class Bank(
 
     }
 
+    var employeeId: Int = 1
+    var employeeDetails = mutableListOf<Employees>()
+
+    fun addEmployees(
+        employeeId: Int,
+        employeeName: String,
+        employeeMobileNo: Long,
+        employeeEmailId: String,
+        userName: String,
+        password: String,
+        address: String
+    ): Employees {
+
+        val employDetail = Employees(
+            employee_id = employeeId,
+            employee_name = employeeName,
+            employee_mobileNo = employeeMobileNo,
+            employee_email = employeeEmailId,
+            employee_userName = userName,
+            employee_password = password,
+            employee_address = address
+        )
+        employeeDetails.add(employDetail)
+        return employDetail
+    }
+
+    fun getEmployList(): List<Employees> {
+
+        return employeeDetails
+    }
+
+    fun getAccountSiz() = employeeDetails.size
+
 }
 
 class InsufficientBalance(message: String) : Exception(message)
@@ -162,21 +195,20 @@ fun main(args: Array<String>) {
 //    println(bank.getBalance(jackAccount))
 
 //    bank.deleteAccount(12345)
-    bank.editAccount(12345)?.apply {
+//    bank.editAccount(12345)?.apply {
+//
+//        this.customer.phone_No = 12345678
+//    }
+//    bank.searchAccount(12345).let { it ->
+//        if (it != null) {
+//            println(it.account_number)
+//            println(it.account_balance)
+//            println(it.account_type)
+//            println(it.account_customer_id)
+//            println(it.customer.name)
+//            println(it.customer.phone_No)
+//        }
 
-        this.customer.phone_No = 12345678
-    }
-    bank.searchAccount(12345).let { it ->
-        if (it != null) {
-            println(it.account_number)
-            println(it.account_balance)
-            println(it.account_type)
-            println(it.account_customer_id)
-            println(it.customer.name)
-            println(it.customer.phone_No)
-        }
-
-    }
 
 //    println("\n\n##########\n\n")
 //    bank.getAccountList().forEach {
@@ -190,9 +222,29 @@ fun main(args: Array<String>) {
 //        println("AadhaarNo:${it.customer.aadhaarNo}")
 //        println("panNo:${it.customer.panCardNo}")
 
+    val jamsAnderson = Employees(
+        1,
+        "JamsAnderson",
+        12345678910,
+        "jams1232@gmail.com",
+        "Anderson",
+        "jams@123",
+        "18j,Moscow"
+    )
+    val stuartBroad = Employees(
+        1,
+        " stuartBroad",
+        6789123450,
+        "broad1232@gmail.com",
+        "Broad",
+        "Broad@123",
+        "15l,London"
+    )
+
+
 }
 
-//}
+
 
 
 
