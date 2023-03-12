@@ -2,11 +2,11 @@ package com.vijaynatarajan.bankappcore
 
 class Customer(
     var name: String,
-    val accountNumber: Int,
-    var accountType: String,
+    val account_Number: Int,
+    var account_Type: String,
     var password: Int,
     var address: String,
-    val aadhaarNo: Long,
-    val panCardNo: String,
-    val phoneNo: Long,
+    val aadhaar_No: Long,
+    val panCard_No: String,
+    val phone_No: Long,
 )
