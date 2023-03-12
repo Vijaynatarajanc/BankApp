@@ -13,21 +13,9 @@ class Bank(
     var customerId: Int = 1
     private var accounts = mutableListOf<BankAccount>()
 
-    fun createAccount(
-        accountBalance: Double,
-        customer: Customer,
-        accountNumber: Int,
-        accountType: String,
+    fun createAccount(accountBalance: Double, customer: Customer, accountNumber: Int, accountType: String, ): BankAccount {
 
-        ): BankAccount {
-
-        val account = BankAccount(
-            account_customer_id = customerId++,
-            account_number = accountNumber,
-            account_type = accountType,
-            customer = customer,
-            account_balance = accountBalance
-        )
+        val account = BankAccount(account_customer_id = customerId++, account_number = accountNumber, account_type = accountType, customer = customer, account_balance = accountBalance)
         accounts.add(account)
         return account
 
@@ -81,12 +69,11 @@ class Bank(
 
     }
 
-    fun searchAccount(accountNumber: Int) {
+    fun searchAccount(accountNumber: Int): List<BankAccount> {
         val search = accounts.find {
             it.account_number == accountNumber
         }
-
-
+        return accounts
     }
 
     fun saveAccount() {
@@ -161,7 +148,7 @@ fun main(args: Array<String>) {
 //    println(bank.getBalance(jackAccount))
 
     bank.deleteAccount(12345)
-
+    bank.searchAccount(12345)
     println("\n\n##########\n\n")
     bank.getAccountList().forEach {
         println("Name :${it.customer.name}")
