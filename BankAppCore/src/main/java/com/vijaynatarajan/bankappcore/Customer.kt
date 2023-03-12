@@ -8,5 +8,5 @@ class Customer(
     var address: String,
     val aadhaar_No: Long,
     val panCard_No: String,
-    val phone_No: Long,
+    var phone_No: Long,
 )
