@@ -13,9 +13,20 @@ class Bank(
     var customerId: Int = 1
     private var accounts = mutableListOf<BankAccount>()
 
-    fun createAccount(accountBalance: Double, customer: Customer, accountNumber: Int, accountType: String, ): BankAccount {
+    fun createAccount(
+        accountBalance: Double,
+        customer: Customer,
+        accountNumber: Int,
+        accountType: String,
+    ): BankAccount {
 
-        val account = BankAccount(account_customer_id = customerId++, account_number = accountNumber, account_type = accountType, customer = customer, account_balance = accountBalance)
+        val account = BankAccount(
+            account_customer_id = customerId++,
+            account_number = accountNumber,
+            account_type = accountType,
+            customer = customer,
+            account_balance = accountBalance
+        )
         accounts.add(account)
         return account
 
@@ -65,15 +76,18 @@ class Bank(
         accounts.remove(delete)
     }
 
-    fun editAccount() {
-
+    fun editAccount(accountNumber: Int): BankAccount? {
+        val edit = accounts.find {
+            it.account_number == accountNumber
+        }
+        return edit
     }
 
-    fun searchAccount(accountNumber: Int): List<BankAccount> {
+    fun searchAccount(accountNumber: Int): BankAccount? {
         val search = accounts.find {
             it.account_number == accountNumber
         }
-        return accounts
+        return search
     }
 
     fun saveAccount() {
@@ -118,9 +132,9 @@ fun main(args: Array<String>) {
     val vijayAccount = bank.createAccount(5000.0, john, 12345, "Savings")
     val jackAccount = bank.createAccount(10000.0, jack, 678910, "Current")
 
-    bank.getAccountList().forEach {
-        println("Name :${it.customer.name}")
-        println("Account number:${it.customer.account_Number}")
+//    bank.getAccountList().forEach {
+//        println("Name :${it.customer.name}")
+//        println("Account number:${it.customer.account_Number}")
 //        println("password :${it.customer.password}")
 //        println("Address:${it.customer.address}")
 //        println("Account type:${it.customer.accountType}")
@@ -129,7 +143,7 @@ fun main(args: Array<String>) {
 //        println("AadhaarNo:${it.customer.aadhaarNo}")
 //        println("panNo:${it.customer.panCardNo}")
 
-    }
+//    }
 //    println(bank.getAccountSize())
 //    bank.deleteAllAccount()
 //    println(bank.getAccountSize())
@@ -147,12 +161,27 @@ fun main(args: Array<String>) {
 //
 //    println(bank.getBalance(jackAccount))
 
-    bank.deleteAccount(12345)
-    bank.searchAccount(12345)
-    println("\n\n##########\n\n")
-    bank.getAccountList().forEach {
-        println("Name :${it.customer.name}")
-        println("Account number:${it.customer.account_Number}")
+//    bank.deleteAccount(12345)
+    bank.editAccount(12345)?.apply {
+
+        this.customer.phone_No = 12345678
+    }
+    bank.searchAccount(12345).let { it ->
+        if (it != null) {
+            println(it.account_number)
+            println(it.account_balance)
+            println(it.account_type)
+            println(it.account_customer_id)
+            println(it.customer.name)
+            println(it.customer.phone_No)
+        }
+
+    }
+
+//    println("\n\n##########\n\n")
+//    bank.getAccountList().forEach {
+//        println("Name :${it.customer.name}")
+//        println("Account number:${it.customer.account_Number}")
 //        println("password :${it.customer.password}")
 //        println("Address:${it.customer.address}")
 //        println("Account type:${it.customer.accountType}")
@@ -161,9 +190,9 @@ fun main(args: Array<String>) {
 //        println("AadhaarNo:${it.customer.aadhaarNo}")
 //        println("panNo:${it.customer.panCardNo}")
 
-    }
-
 }
+
+//}
 
 
 
