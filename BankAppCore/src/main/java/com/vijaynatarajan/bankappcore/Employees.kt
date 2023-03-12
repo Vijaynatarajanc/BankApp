@@ -10,28 +10,5 @@ class Employees(
     employee_address: String,
 ) {
 
-    fun addEmployees() {
-
-    }
-
-    fun editEmployees() {
-
-    }
-
-    fun deleteEmployees() {
-
-    }
-
-    fun updatedEmployees() {
-
-    }
-
-    fun savedEmployees() {
-
-    }
-
-    fun searchEmployees() {
-
-    }
 
 }
