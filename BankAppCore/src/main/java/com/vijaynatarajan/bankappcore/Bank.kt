@@ -73,8 +73,6 @@ class Bank(
     fun deleteAccount(accountNumber: Int) {
         val delete = accounts.find {
             it.account_number == accountNumber
-
-
         }
         accounts.remove(delete)
     }
@@ -83,7 +81,11 @@ class Bank(
 
     }
 
-    fun searchAccount() {
+    fun searchAccount(accountNumber: Int) {
+        val search = accounts.find {
+            it.account_number == accountNumber
+        }
+
 
     }
 
@@ -116,13 +118,15 @@ fun main(args: Array<String>) {
         123456789
     )
 
-    val jack = Customer("Jack", 6789,
+    val jack = Customer(
+        "Jack", 6789,
         "Current",
         8765,
         "13g,Northompton",
         456756789102,
         "dc342hg",
-        9845674980)
+        9845674980
+    )
 
     val vijayAccount = bank.createAccount(5000.0, john, 12345, "Savings")
     val jackAccount = bank.createAccount(10000.0, jack, 678910, "Current")
