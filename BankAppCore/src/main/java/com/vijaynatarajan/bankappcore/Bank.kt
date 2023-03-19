@@ -101,7 +101,6 @@ class Bank(
     ): Employees {
 
         val employDetail = Employees(
-            employee_id = employeeId,
             employee_name = employeeName,
             employee_mobileNo = employeeMobileNo,
             employee_email = employeeEmailId,
@@ -223,16 +222,14 @@ fun main(args: Array<String>) {
 //        println("panNo:${it.customer.panCardNo}")
 
     val jamsAnderson = Employees(
-        1,
         "JamsAnderson",
-        12345678910,
+        1234567891,
         "jams1232@gmail.com",
         "Anderson",
         "jams@123",
         "18j,Moscow"
     )
     val stuartBroad = Employees(
-        1,
         " stuartBroad",
         6789123450,
         "broad1232@gmail.com",
